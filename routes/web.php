@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\Page;
 use App\Models\User;
 
 /*
@@ -16,10 +17,10 @@ use App\Models\User;
 */
 
 
-Route::get('/',[PagesController::class,'home']);
-Route::get('/login',[PagesController::class,'login']);
-Route::get('/registration',[PagesController::class,'registration']);
-Route::post('/regis-user',[PagesController::class,'registerUser'])->name('register-user');
-Route::post('/login-user',[PagesController::class,'loginUser'])->name('login-user');
-Route::get('/dashboard',[PagesController::class,'dashboard']);
-Route::get('/auth.list',[PagesController::class,'list']);
+Route::get('/',[Page::class,'home']);
+Route::get('/login',[Page::class,'login']);
+Route::get('/registration',[Page::class,'registration']);
+Route::post('/regis-user',[Page::class,'registerUser'])->name('register-user');
+Route::post('/login-user',[Page::class,'loginUser'])->name('login-user');
+Route::get('/dashboard',[Page::class,'dashboard']);
+Route::get('/auth.list',[Page::class,'list']);
